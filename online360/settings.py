@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user_accounts',
-    'job_listings',
+    'jobs',
     'home',
     'allauth',
     'allauth.account',

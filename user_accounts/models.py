@@ -13,6 +13,7 @@ class Profile(models.Model):
     hourly_rate = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     availability = models.CharField(max_length=100, blank=True, null=True)
     consultation_cost = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
+    is_employer = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.user.username} Profile'
