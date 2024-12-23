@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Profile Deletion</title>
+</head>
+<body>
+    <h2>Are you sure you want to delete your profile?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>
