@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inbox</title>
+</head>
+<body>
+    <h2>Inbox</h2>
+    <ul>
+        {% for message in messages %}
+        <li>{{ message.timestamp }} - {{ message.subject }} - {{ message.content }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
