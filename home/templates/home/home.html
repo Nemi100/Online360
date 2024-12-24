@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to Online 360</h1>
+    <h2>Recent Reviews</h2>
+    <ul>
+        {% for review in reviews %}
+        <li>{{ review.timestamp }} - {{ review.review }} - Rating: {{ review.rating }}/5</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

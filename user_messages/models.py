@@ -7,6 +7,7 @@ class Message(models.Model):
     subject = models.CharField(max_length=200)
     content = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
+    attachment = models.FileField(upload_to='attachments/', blank=True, null=True)
 
     def __str__(self):
         return self.subject

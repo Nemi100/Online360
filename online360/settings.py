@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'jobs',
     'user_messages',
     'home',
+    'reviews',
+    'metrics',
     'notifications',
     'allauth',
     'allauth.account',

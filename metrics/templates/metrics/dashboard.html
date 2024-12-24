@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Metrics Dashboard</title>
+</head>
+<body>
+    <h1>Project Metrics</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>Milestone</th>
+                <th>Deadline</th>
+                <th>Status</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for metric in metrics %}
+            <tr>
+                <td>{{ metric.project_name }}</td>
+                <td>{{ metric.milestone }}</td>
+                <td>{{ metric.deadline }}</td>
+                <td>{{ metric.status }}</td>
+                <td>{{ metric.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
