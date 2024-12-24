@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to Online 360{% endblock %}
+
+{% block content %}
+<h2>Welcome to Online 360</h2>
+<p>This is your one-stop solution for connecting with top freelancers and employers.</p>
+<p><a href="{% url 'register' %}">Register</a> or <a href="{% url 'login' %}">Log In</a> to get started.</p>
+{% endblock %}

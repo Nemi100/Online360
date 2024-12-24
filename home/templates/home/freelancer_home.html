@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Freelancer Home{% endblock %}
+
+{% block content %}
+<h1>Welcome, {{ user.username }}!</h1>
+<p>Head to your <a href="{% url 'dashboard' %}">Dashboard</a> and click "Update Profile" to complete your profile.</p>
+<h2>Your Categories</h2>
+<div class="category-section">
+    {% for category in categories %}
+        {% include 'snippets/category_description.html' %}
+    {% endfor %}
+</div>
+
+<h2>Your Recent Reviews</h2>
+<ul>
+    {% for review in reviews %}
+    <li>{{ review.timestamp }} - {{ review.review }} - Rating: {{ review.rating }}/5</li>
+    {% endfor %}
+</ul>
+{% endblock %}
