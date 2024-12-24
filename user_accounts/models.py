@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from jobs.models import Category
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -14,6 +15,7 @@ class Profile(models.Model):
     availability = models.CharField(max_length=100, blank=True, null=True)
     consultation_cost = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     is_employer = models.BooleanField(default=False)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return f'{self.user.username} Profile'

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ user.username }}'s Profile</title>
+</head>
+<body>
+    <h1>{{ user.username }}'s Profile</h1>
+    <img src="{{ profile.profile_picture.url }}" alt="{{ user.username }}'s profile picture">
+    <p><strong>First Name:</strong> {{ profile.first_name }}</p>
+    <p><strong>Last Name:</strong> {{ profile.last_name }}</p>
+    <p><strong>Category:</strong> {{ profile.category.name }}</p>
+    {% include 'home/snippets/category_description.html' %}
+    <p><strong>Bio:</strong> {{ profile.bio }}</p>
+    <p><strong>LinkedIn Profile:</strong> <a href="{{ profile.linkedin_profile }}">{{ profile.linkedin_profile }}</a></p>
+    <p><strong>Past Works:</strong> {{ profile.past_works }}</p>
+    <p><strong>Core Language Strength:</strong> {{ profile.core_language_strength }}</p>
+    <p><strong>Hourly Rate:</strong> £{{ profile.hourly_rate }}</p>
+    <p><strong>Availability:</strong> {{ profile.availability }}</p>
+    <p><strong>Consultation Cost:</strong> £{{ profile.consultation_cost }}</p>
+    <p><strong>Employer Status:</strong> {{ profile.is_employer }}</p>
+</body>
+</html>

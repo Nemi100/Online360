@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required  
+from django.contrib.auth.decorators import login_required
 from reviews.models import Review
 from metrics.models import Metric
+from jobs.models import Category
 
 def home_view(request):
+    categories = Category.objects.all()
     reviews = Review.objects.all().order_by('-timestamp')[:5]  # Display 5 recent reviews
-    return render(request, 'home/home.html', {'reviews': reviews})
+    return render(request, 'home/home.html', {'categories': categories, 'reviews': reviews})
 
 @login_required
 def dashboard_view(request):

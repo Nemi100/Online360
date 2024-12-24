@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import views as auth_views
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileForm
 from .models import Profile
@@ -48,8 +48,14 @@ def delete_profile(request):
         return redirect('home')
     return render(request, 'user_accounts/profile_confirm_delete.html')
 
-def dashboard(request): 
-    return render(request, 'user_accounts/dashboard.html') 
-    
-def home(request): 
+@login_required
+def dashboard(request):
+    return render(request, 'user_accounts/dashboard.html')
+
+def home(request):
     return render(request, 'user_accounts/home.html')
+
+def profile_view(request, username):
+    user = get_object_or_404(User, username=username)
+    profile = get_object_or_404(Profile, user=user)
+    return render(request, 'user_accounts/profile.html', {'user': user, 'profile': profile})
